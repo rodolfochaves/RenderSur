@@ -48,15 +48,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/button1"
             android:text="Entrar" />
-        <Switch
+        <Switch xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/switch1"
             android:layout_gravity="center"
             android:layout_marginLeft="0.0dp"
-            android:showText="true"
-            xmlns:tools="http://schemas.android.com/tools"
             tools:text="Recordar"
-            />
+            android:text="Recordar"
+            android:textColor="@android:color/black"
+            android:textAlignment="textEnd" />
     </LinearLayout>
 </LinearLayout>
