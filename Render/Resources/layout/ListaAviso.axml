@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingTop="2dp">
+    <TextView
+        android:id="@+id/txtAviso"
+        android:text="No.Aviso"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:paddingLeft="10dp"
+        android:textColor="#555555" />
+    <TextView
+        android:id="@+id/txtEspecie"
+        android:text="Especie"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:textColor="#555555" />
+    <TextView
+        android:id="@+id/txtAG"
+        android:text="AG"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="#555555" />
+    <TextView
+        android:id="@+id/txtFAviso"
+        android:text="F.Aviso"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="#555555" />
+    <TextView
+        android:id="@+id/txtPoblación"
+        android:text="Población"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="#555555" />
+    <TextView
+        android:text="Nombre"
+        android:id="@+id/txtNombre"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/white" />
+    <TextView
+        android:text="Explotación"
+        android:id="@+id/txtExplotación"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/white" />
+    <TextView
+        android:text="Tfno1"
+        android:id="@+id/txtTfno1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/white" />
+    <TextView
+        android:text="Tfno2"
+        android:id="@+id/txtTfno2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="@android:color/white" />
+</LinearLayout>
