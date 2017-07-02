@@ -1,6 +1,7 @@
 ﻿using System;
 namespace Render
 {
+    //Prueba de cambios
 	public class Aviso
 	{
 		public string _Aviso
