@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingTop="2dp">
+  <TextView
+      android:id="@+id/txtAvisoR"
+      android:text="No.Aviso"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:layout_weight="1"
+      android:gravity="left"
+      android:paddingLeft="10dp"
+      android:textColor="#555555" />
+  <TextView
+      android:id="@+id/txtEspecieR"
+      android:text="Especie"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:layout_weight="1"
+      android:gravity="left"
+      android:textColor="#555555" />
+  <TextView
+      android:id="@+id/txtFAvisoR"
+      android:text="F.Aviso"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:textColor="#555555" />
+  <TextView
+    android:text="Explotación"
+    android:id="@+id/txtExplotaciónR"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:textColor="@android:color/white" />
+  <TextView
+     android:text="Nombre"
+     android:id="@+id/txtNombreR"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:layout_weight="1"
+     android:gravity="center"
+     android:textColor="@android:color/white" />
+  <TextView
+      android:text="Kilos"
+      android:id="@+id/txtKiloR"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:textColor="@android:color/white" />
+  <TextView
+      android:text="Motivo anulación"
+      android:id="@+id/txtMotivoAnulacionR"
+      android:layout_height="wrap_content"
+      android:layout_width="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:textColor="@android:color/white" />
+  <TextView
+    android:id="@+id/txtPoblaciónR"
+    android:text="Cód. Población"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:textColor="#555555" />
+</LinearLayout>

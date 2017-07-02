@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="7"
+    android:columnCount="4"
+    android:paddingLeft="10dip">
+    <TextView
+        android:text="No. Aviso:"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textSize="16dip"
+        android:textStyle="bold" />
+    <TextView />
+    <TextView />
+    <TextView />
+    <TextView
+        android:id="@+id/txt_FANumeroAviso"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView />
+    <TextView />
+    <TextView />
+    <TextView
+        android:text="Fecha Aviso:"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textSize="16dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Fecha Recogida:"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textSize="16dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Fecha Fin Poliza"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textSize="16dip"
+        android:textStyle="bold" />
+    <TextView />
+    <TextView
+        android:id="@+id/txt_FAAviso"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FAFechaRecogida"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FAFechaFinPoliza"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView />
+    <TextView
+        android:text="Explotación:"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textSize="16dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Nombre:"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textSize="16dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Cód. Explotación"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView />
+    <TextView
+        android:id="@+id/txt_FAExplotacion"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FANombre"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FACodExplotacion"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView />
+    <TextView
+        android:text="Población"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Dirección"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Tfno. 1"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Tfno. 2"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txt_FAPobliacion"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FADireccion"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FATfn1"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FATfn2"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:text="Estado Siniestro"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Especie"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView />
+    <TextView />
+    <TextView
+        android:id="@+id/txt_FAEstadoSiniestro"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FAEspecie"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView />
+    <TextView />
+    <TextView
+        android:text="Fecha Nacimiento"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Fecha Muerte"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Crotal"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Nº Animales"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/txt_FAFechaNacimiento"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FAFechaMuerte"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FACrotal"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <EditText
+        android:id="@+id/txt_FANumAnimales"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:text="Peso Bruto"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Tara"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Peso Neto"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView />
+  <TextView
+    android:text="Peso Total"
+    android:textSize="16dip"
+    android:paddingRight="10dip"
+    android:paddingBottom="5dip"
+    android:textStyle="bold" />
+  <TextView />
+    <EditText
+        android:id="@+id/txt_FAPesoBruto"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+    <EditText
+        android:id="@+id/txt_FAPesoTara"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:focusable="false"
+        android:focusableInTouchMode="false" />
+    <TextView
+        android:id="@+id/txt_FAPesoNeto"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView />
+  <TextView
+    android:id="@+id/txt_FAPesoTotal"
+    android:textSize="14dip"
+    android:paddingRight="10dip"
+    android:paddingBottom="5dip" />
+  <TextView />
+    <TextView
+        android:text="Observaciones"
+        android:textSize="16dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold"
+        android:layout_columnSpan="4" />
+    <EditText
+        android:id="@+id/txt_FAObservaciones"
+        android:textSize="14dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:layout_columnSpan="4" />
+    <Button
+        android:text="Pesar"
+        android:id="@+id/btn_FAPesar"
+        android:layout_columnSpan="4" />
+</GridLayout>

@@ -7,83 +7,91 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:id="@+id/llContainer"
-        >
+        android:id="@+id/llContainer">
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/txtAvisoCabecera"
                 android:text="No.Aviso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:textColor="@android:color/white"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtEspecieCabecera"
                 android:text="Especie"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
-                android:textColor="@android:color/white"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtAGCabecera"
                 android:text="AG"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtFAvisoCabecera"
                 android:text="F.Aviso"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtPoblacionCabecera"
                 android:text="Población"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtNombreCabecera"
                 android:text="Nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtExplotacionCabecera"
                 android:text="Explotación"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtTfno1Cabecera"
                 android:text="Tfno1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:textStyle="bold"
                 android:textSize="16sp" />
             <TextView
+                android:id="@+id/txtTfno2Cabecera"
                 android:text="Tfno2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:textColor="@android:color/white"
+                android:gravity="left"
+                android:textStyle="bold"
                 android:textSize="16sp" />
         </LinearLayout>
         <View
@@ -94,9 +102,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/listView"
-            android:background="#F2F2F2"
-            android:divider="#101010"
-            android:dividerHeight="1dp" />
+            android:divider="#848484"
+            android:dividerHeight="2dp" />
     </LinearLayout>
     <EditText
         android:id="@+id/etSearch"

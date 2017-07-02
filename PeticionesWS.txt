@@ -1,0 +1,7 @@
+http://sede.rendersur.net:5048/RENDERAMAPP/OData/Company('RENDER_APPMOVIL')/AvisosAPPWS(Document_Type='Pedido',No='AR17-0020050')?$format=json
+
+http://sede.rendersur.net:5048/RENDERAMAPP/OData/Company('RENDER_APPMOVIL')/AvisosAPPWS?$format=json&$filter=Estado_siniestro%20eq%20%27Pendiente%27
+
+http://SERVER01.grender.local:5048/RENDERAMAPP/OData/Company('RENDER_APPMOVIL')/ConductoresAPPWS
+http://SERVER01.grender.local:5048/RENDERAMAPP/OData/Company('RENDER_APPMOVIL')/EspeciesAPPWS
+http://SERVER01.grender.local:5048/RENDERAMAPP/OData/Company('RENDER_APPMOVIL')/MotivosAnulacionAPPWS

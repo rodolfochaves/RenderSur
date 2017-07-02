@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="render_background">#ffffffff</color><color name="theme_devicedefault_background">#ff72d1d3</color>
+  <style name="Render" parent="@android:style/Theme.DeviceDefault">
+    <item name="android:colorBackground">@color/render_background</item>
+   <item name="android:actionBarStyle">@style/ActionBarTheme</item>
+    <item name="android:windowBackground">?android:attr/colorBackground</item>
+   <!--
+    <item name="android:colorPrimary">#ff00607c</item>
+    <item name="android:colorButtonNormal">?android:attr/colorBackground</item>
+    <item name="android:colorPrimaryDark">#ff72d1d3</item>
+    -->
+    <item name="android:textColorPrimary">#132F49</item>
+    <item name="android:textColorSecondary">#ff828282</item>
+    <item name="android:textColor">#ff848484</item>
+<!--
+    <item name="android:colorAccent">#ff909952</item>
+    <item name="android:colorControlActivated">#ff3de70b</item>
+    <item name="android:colorControlNormal">#ff0d19e5</item>
+  -->
+  </style>
+  <style name="ActionBarTheme" parent="@android:style/Widget.Holo.Light.ActionBar">
+    <item name="android:background">#00607C</item>
+    <item name="android:titleTextStyle">@style/ActionBarTitleText</item>
+  </style>
+  <style name="ActionBarTitleText" parent="@android:style/TextAppearance.Holo">
+    <item name="android:textColor">@color/render_background</item>
+    <item name="android:textSize">28dp</item>
+  </style>
+  <style name="RenderRojo" parent="@android:style/Theme.DeviceDefault">
+    <item name="android:textColor">#ff0000</item>
+  </style>
+  <style name="RenderVerde" parent="@android:style/Theme.DeviceDefault">
+    <item name="android:textColor">#00ff2b</item>
+  </style>
+  <style name="RenderVioleta" parent="@android:style/Theme.DeviceDefault">
+    <item name="android:textColor">#a300ff</item>
+  </style>
+ 
+</resources>

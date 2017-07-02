@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <item name="SeparadorListaAvisosPendientes" type="color">#FF72d1d3</item>
+  <item name="BotonLogin" type="color">#FFF2F2F2</item>
+</resources>

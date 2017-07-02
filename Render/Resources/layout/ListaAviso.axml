@@ -7,75 +7,66 @@
     android:paddingTop="2dp">
     <TextView
         android:id="@+id/txtAviso"
-        android:text="No.Aviso"
+        android:text=""
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
         android:gravity="left"
-        android:paddingLeft="10dp"
-        android:textColor="#555555" />
+        android:paddingLeft="10dp" />
     <TextView
         android:id="@+id/txtEspecie"
-        android:text="Especie"
+        android:text=""
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="left"
-        android:textColor="#555555" />
+        android:gravity="left" />
     <TextView
         android:id="@+id/txtAG"
-        android:text="AG"
+        android:text=""
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="#555555" />
+        android:gravity="left" />
     <TextView
         android:id="@+id/txtFAviso"
-        android:text="F.Aviso"
+        android:text=""
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="#555555" />
+        android:gravity="left" />
     <TextView
         android:id="@+id/txtPoblación"
-        android:text="Población"
+        android:text=""
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="#555555" />
+        android:gravity="left" />
     <TextView
-        android:text="Nombre"
+        android:text=""
         android:id="@+id/txtNombre"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="@android:color/white" />
+        android:gravity="left" />
     <TextView
-        android:text="Explotación"
+        android:text=""
         android:id="@+id/txtExplotación"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="@android:color/white" />
+        android:gravity="left" />
     <TextView
-        android:text="Tfno1"
+        android:text=""
         android:id="@+id/txtTfno1"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="@android:color/white" />
+        android:gravity="left" />
     <TextView
-        android:text="Tfno2"
+        android:text=""
         android:id="@+id/txtTfno2"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="@android:color/white" />
+        android:gravity="left" />
 </LinearLayout>

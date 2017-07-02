@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="3"
+    android:columnCount="3"
+    android:layout_margin="20dp">
+    <ImageButton
+        android:id="@+id/BotonAvisosPendientes"
+        android:src="@drawable/pendientes"
+        android:paddingTop="15dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="120dp"
+        android:paddingBottom="10dp"
+        android:background="@android:color/transparent" />
+    <ImageButton
+        android:id="@+id/BotonAvisosRecogidos"
+        android:src="@drawable/recogidos"
+        android:paddingTop="15dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="120dp"
+        android:paddingBottom="10dp"
+        android:background="@android:color/transparent" />
+    <ImageButton
+        android:src="@drawable/sincronizacion"
+        android:id="@+id/BotonAvisosSinSincronizar"
+        android:paddingTop="15dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="80dp"
+        android:paddingBottom="10dp"
+        android:background="@android:color/transparent" />
+    <TextView
+        android:text="Avisos Pendientes"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+    <TextView
+        android:text="Avisos Recogidos"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/txtAvisosSinSincronizar"
+        android:text="Sin Sincronizar - "
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:paddingRight="60dp"/>
+    <ImageButton
+        android:id="@+id/BotonFinalizarHojadeTrabajo"
+        android:src="@drawable/hojatrabajo"
+        android:paddingTop="70dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="120dp"
+        android:paddingBottom="10dp"
+        android:background="@android:color/transparent" />
+    <ImageButton
+        android:id="@+id/BotonImprimirHojadeTrabajo"
+        android:src="@drawable/imprimirhojatrabajo"
+        android:paddingTop="70dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="120dp"
+        android:paddingBottom="10dp"
+        android:background="@android:color/transparent" />
+    <ImageButton
+        android:id="@+id/BotonSincronizar"
+        android:src="@drawable/sincronizar"
+        android:paddingTop="70dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="80dp"
+        android:paddingBottom="10dp"
+        android:background="@android:color/transparent" />
+    <TextView
+        android:text="Finalizar Hoja de Trabajo"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+    <TextView
+        android:text="Imprimir Hoja de Trabajo"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+    <TextView
+        android:text="Sincronizar"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:paddingRight="20dp"/>
+</GridLayout>

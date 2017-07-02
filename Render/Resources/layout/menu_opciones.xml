@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+  <!--///showAsAction="always" ///-->
+  <item android:id="@+id/action_rechazar" android:title="Rechazar" showAsAction="always" />
+  <item android:id="@+id/action_acumular" android:title="Acumular" showAsAction="always" />
+  <item android:id="@+id/action_imprimir" android:title="Cerrar e Imprimir" showAsAction="always" />
+  <item android:id="@+id/action_cerrar" android:title="Cerrar" showAsAction="always" />
+  <item android:id="@+id/action_editar" android:title="Editar" showAsAction="always" />
+  <item android:id="@+id/action_anular" android:title="Anular" showAsAction="always" />
+  <item android:id="@+id/action_cancelar" android:title="Cancelar" showAsAction="always" />
+
+</menu>
