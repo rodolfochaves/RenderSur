@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:rowCount="7"
-    android:columnCount="4"
+    android:columnCount="6"
     android:paddingLeft="10dip">
     <TextView
         android:text="No. Aviso:"
@@ -11,9 +11,6 @@
         android:paddingBottom="5dip"
         android:textSize="16dip"
         android:textStyle="bold" />
-    <TextView />
-    <TextView />
-    <TextView />
     <TextView
         android:id="@+id/txt_FANumeroAviso"
         android:textSize="14dip"
@@ -22,6 +19,8 @@
     <TextView />
     <TextView />
     <TextView />
+    <TextView/>
+  <!--Segunda Fila-->
     <TextView
         android:text="Fecha Aviso:"
         android:paddingRight="10dip"
@@ -40,7 +39,25 @@
         android:paddingBottom="5dip"
         android:textSize="16dip"
         android:textStyle="bold" />
-    <TextView />
+    <TextView
+      android:text="Explotación:"
+      android:paddingRight="10dip"
+      android:paddingBottom="5dip"
+      android:textSize="16dip"
+      android:textStyle="bold" />
+  <TextView
+    android:text="Nombre:"
+    android:paddingRight="10dip"
+    android:paddingBottom="5dip"
+    android:textSize="16dip"
+    android:textStyle="bold" />
+  <TextView
+      android:text="Cód. Explotación"
+      android:textSize="16dip"
+      android:paddingRight="10dip"
+      android:paddingBottom="5dip"
+      android:textStyle="bold" />
+  <!--Tercera Fila-->
     <TextView
         android:id="@+id/txt_FAAviso"
         android:textSize="14dip"
@@ -56,26 +73,6 @@
         android:textSize="14dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip" />
-    <TextView />
-    <TextView
-        android:text="Explotación:"
-        android:paddingRight="10dip"
-        android:paddingBottom="5dip"
-        android:textSize="16dip"
-        android:textStyle="bold" />
-    <TextView
-        android:text="Nombre:"
-        android:paddingRight="10dip"
-        android:paddingBottom="5dip"
-        android:textSize="16dip"
-        android:textStyle="bold" />
-    <TextView
-        android:text="Cód. Explotación"
-        android:textSize="16dip"
-        android:paddingRight="10dip"
-        android:paddingBottom="5dip"
-        android:textStyle="bold" />
-    <TextView />
     <TextView
         android:id="@+id/txt_FAExplotacion"
         android:textSize="14dip"
@@ -91,7 +88,7 @@
         android:textSize="14dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip" />
-    <TextView />
+    <!--Cuarta Fila-->
     <TextView
         android:text="Población"
         android:textSize="16dip"
@@ -116,6 +113,19 @@
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:textStyle="bold" />
+  <TextView
+      android:text="Estado Siniestro"
+      android:textSize="16dip"
+      android:paddingRight="10dip"
+      android:paddingBottom="5dip"
+      android:textStyle="bold" />
+  <TextView
+      android:text="Especie"
+      android:textSize="16dip"
+      android:paddingRight="10dip"
+      android:paddingBottom="5dip"
+      android:textStyle="bold" />
+  <!--Quinta Fila-->
     <TextView
         android:id="@+id/txt_FAPobliacion"
         android:textSize="14dip"
@@ -137,20 +147,6 @@
         android:paddingRight="10dip"
         android:paddingBottom="5dip" />
     <TextView
-        android:text="Estado Siniestro"
-        android:textSize="16dip"
-        android:paddingRight="10dip"
-        android:paddingBottom="5dip"
-        android:textStyle="bold" />
-    <TextView
-        android:text="Especie"
-        android:textSize="16dip"
-        android:paddingRight="10dip"
-        android:paddingBottom="5dip"
-        android:textStyle="bold" />
-    <TextView />
-    <TextView />
-    <TextView
         android:id="@+id/txt_FAEstadoSiniestro"
         android:textSize="14dip"
         android:paddingRight="10dip"
@@ -160,8 +156,7 @@
         android:textSize="14dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip" />
-    <TextView />
-    <TextView />
+    <!--Sexta Fila-->
     <TextView
         android:text="Fecha Nacimiento"
         android:textSize="16dip"
@@ -186,6 +181,9 @@
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:textStyle="bold" />
+  <TextView/>
+  <TextView/>
+  <!--Septima Fila-->
     <TextView
         android:id="@+id/txt_FAFechaNacimiento"
         android:textSize="14dip"
@@ -205,74 +203,83 @@
         android:id="@+id/txt_FANumAnimales"
         android:textSize="14dip"
         android:paddingRight="10dip"
-        android:paddingBottom="5dip" />
+        android:paddingBottom="5dip" 
+        android:inputType="number"/>
+  <TextView/>
+  <TextView/>
+  <!--Octava Fila-->
     <TextView
         android:text="Peso Bruto"
-        android:textSize="16dip"
+        android:textSize="22dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:textStyle="bold" />
     <TextView
         android:text="Tara"
-        android:textSize="16dip"
+        android:textSize="22dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:textStyle="bold" />
     <TextView
         android:text="Peso Neto"
-        android:textSize="16dip"
+        android:textSize="22dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip"
+        android:textStyle="bold" />
+    <TextView
+        android:text="Peso Total"
+        android:textSize="22dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:textStyle="bold" />
     <TextView />
-  <TextView
-    android:text="Peso Total"
-    android:textSize="16dip"
-    android:paddingRight="10dip"
-    android:paddingBottom="5dip"
-    android:textStyle="bold" />
-  <TextView />
+    <TextView/>
     <EditText
         android:id="@+id/txt_FAPesoBruto"
-        android:textSize="14dip"
+        android:textSize="24dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:focusable="false"
-        android:focusableInTouchMode="false" />
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"/>
     <EditText
         android:id="@+id/txt_FAPesoTara"
-        android:textSize="14dip"
+        android:textSize="24dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:focusable="false"
-        android:focusableInTouchMode="false" />
+        android:focusableInTouchMode="false"
+        android:inputType="numberDecimal"/>
     <TextView
         android:id="@+id/txt_FAPesoNeto"
-        android:textSize="14dip"
+        android:textSize="24dip"
+        android:paddingRight="10dip"
+        android:paddingBottom="5dip" />
+    <TextView
+        android:id="@+id/txt_FAPesoTotal"
+        android:textSize="24dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip" />
     <TextView />
-  <TextView
-    android:id="@+id/txt_FAPesoTotal"
-    android:textSize="14dip"
-    android:paddingRight="10dip"
-    android:paddingBottom="5dip" />
-  <TextView />
+  <TextView/>
     <TextView
         android:text="Observaciones"
-        android:textSize="16dip"
+        android:textSize="20dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
         android:textStyle="bold"
         android:layout_columnSpan="4" />
     <EditText
         android:id="@+id/txt_FAObservaciones"
-        android:textSize="14dip"
+        android:textSize="20dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
-        android:layout_columnSpan="4" />
+        android:height="80dip"
+        android:layout_columnSpan="6" />
     <Button
         android:text="Pesar"
         android:id="@+id/btn_FAPesar"
-        android:layout_columnSpan="4" />
+        android:layout_columnSpan="6"
+        android:width="600dip"
+        android:layout_marginLeft="200dip"/>
 </GridLayout>

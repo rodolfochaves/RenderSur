@@ -37,7 +37,7 @@ namespace Render
             TextView txt_FechaRecogida = FindViewById<TextView>(Resource.Id.txt_FAFechaRecogidaRecogido);
             txt_FechaRecogida.Text = _aviso.Fecha_Recogida.ToString(culture);
             TextView txt_FechaFinPoliza = FindViewById<TextView>(Resource.Id.txt_FAFechaFinPolizaRecogido);
-            txt_FechaFinPoliza.Text = _aviso.Fecha_Fin;
+            txt_FechaFinPoliza.Text = _aviso.Fecha_Fin.ToString("dd/MM/yyyy");
             TextView txt_Explotacion = FindViewById<TextView>(Resource.Id.txt_FAExplotacionRecogido);
             txt_Explotacion.Text = _aviso.Explotacion;
             TextView txt_NombreExplotacion = FindViewById<TextView>(Resource.Id.txt_FANombreRecogido);
@@ -55,9 +55,9 @@ namespace Render
             TextView txt_Especie = FindViewById<TextView>(Resource.Id.txt_FAEspecieRecogido);
             txt_Especie.Text = _aviso.Espiece;
             TextView txt_FechaNacimiento = FindViewById<TextView>(Resource.Id.txt_FAFechaNacimientoRecogido);
-            txt_FechaNacimiento.Text = _aviso.FNacimiento;
+            txt_FechaNacimiento.Text = _aviso.FNacimiento.ToString("dd/MM/yyyy");
             TextView txt_FechaMuerte = FindViewById<TextView>(Resource.Id.txt_FAFechaMuerteRecogido);
-            txt_FechaMuerte.Text = _aviso.FMuerte;
+            txt_FechaMuerte.Text = _aviso.FMuerte.ToString("dd/MM/yyyy");
             TextView txt_Crotal = FindViewById<TextView>(Resource.Id.txt_FACrotalRecogido);
             txt_Crotal.Text = _aviso.Crotal;
             TextView txt_NumAnimales = FindViewById<TextView>(Resource.Id.txt_FANumAnimalesRecogido);

@@ -44,7 +44,7 @@ namespace Render
             AG.Text = pAvisos[position].AG ? "Si":"No";
             CultureInfo arSA = new CultureInfo("ar-SA");
             TextView FAviso = row.FindViewById<TextView>(Resource.Id.txtFAviso);
-            DateTime ConvFechaAviso = DateTime.Parse(pAvisos[position].Fecha_Aviso);
+            DateTime ConvFechaAviso = pAvisos[position].Fecha_Aviso;
             FAviso.Text = string.Format("{0:dd/MM/yyyy}",ConvFechaAviso);            
             TextView Poblacion = row.FindViewById<TextView>(Resource.Id.txtPoblación);
             Poblacion.Text = pAvisos[position].Poblacion;

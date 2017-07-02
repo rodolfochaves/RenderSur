@@ -145,6 +145,9 @@ namespace Render
 			// aapt resource value: 0x7f080061
 			public const int action_cancelar_recogido = 2131230817;
 			
+			// aapt resource value: 0x7f08005b
+			public const int action_cerareimprimir = 2131230811;
+			
 			// aapt resource value: 0x7f08005c
 			public const int action_cerrar = 2131230812;
 			
@@ -153,9 +156,6 @@ namespace Render
 			
 			// aapt resource value: 0x7f08005d
 			public const int action_editar = 2131230813;
-			
-			// aapt resource value: 0x7f08005b
-			public const int action_imprimir = 2131230811;
 			
 			// aapt resource value: 0x7f080062
 			public const int action_imprimir_recogido = 2131230818;

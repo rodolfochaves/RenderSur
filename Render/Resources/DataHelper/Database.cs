@@ -19,14 +19,13 @@ namespace Render.Resources.DataHelper
                 
                 using (var conexion = new SQLiteConnection(Path.Combine(Directorio, _db)))
                 {
-                    
+
                     conexion.CreateTable<AvisoRender>();
                     conexion.CreateTable<ConductorRender>();
                     conexion.CreateTable<MotivosAnulacionRender>();
                     conexion.CreateTable<PesadaRender>();
                     conexion.CreateTable<HojaRutaRender>();
                     conexion.CreateTable<ColaAvisoRender>();
-                    conexion.CreateTable<SmtpRender>();
                     return true;
                 }
             }
@@ -251,13 +250,15 @@ namespace Render.Resources.DataHelper
             }
 
         }
-        public bool InsertarSmtp(SmtpRender _smtp)
+        #endregion
+        #region EliminarDatos
+        public bool EliminarAviso(ColaAvisoRender _colaAviso)
         {
             try
             {
                 using (var conexion = new SQLiteConnection(Path.Combine(Directorio, _db)))
                 {
-                    conexion.Insert(_smtp);
+                    conexion.Delete(_colaAviso);
                     return true;
                 }
             }
@@ -266,6 +267,7 @@ namespace Render.Resources.DataHelper
                 Log.Info("SQLiteEx", ex.Message);
                 return false;
             }
+
         }
         #endregion
         public ConductorRender Conductor(string Usuario)

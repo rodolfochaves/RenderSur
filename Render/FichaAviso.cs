@@ -25,6 +25,8 @@ namespace Render
         private Database _db = new Database();
         private EditText txt_Peso;
         private EditText txt_Tara;
+        private AlertDialog.Builder alert;
+        private Dialog dialog;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,9 +39,9 @@ namespace Render
             TextView txt_FechaAviso = FindViewById<TextView>(Resource.Id.txt_FAAviso);
             txt_FechaAviso.Text = String.Format("{0:dd/MM/yyyy}", _aviso.Fecha_Aviso);
             TextView txt_FechaRecogida = FindViewById<TextView>(Resource.Id.txt_FAFechaRecogida);
-            txt_FechaRecogida.Text = _aviso.Fecha_Recogida.ToString(culture);
+            txt_FechaRecogida.Text = DateTime.Now.ToString("dd/MM/yyyy");
             TextView txt_FechaFinPoliza = FindViewById<TextView>(Resource.Id.txt_FAFechaFinPoliza);
-            txt_FechaFinPoliza.Text = _aviso.Fecha_Fin;
+            txt_FechaFinPoliza.Text = _aviso.Fecha_Fin.ToString("dd/MM/yyyy");
 
             TextView txt_Explotacion = FindViewById<TextView>(Resource.Id.txt_FAExplotacion);
             txt_Explotacion.Text = _aviso.Explotacion;
@@ -63,9 +65,9 @@ namespace Render
             txt_Especie.Text = _aviso.Espiece;
 
             TextView txt_FechaNacimiento = FindViewById<TextView>(Resource.Id.txt_FAFechaNacimiento);
-            txt_FechaNacimiento.Text = _aviso.FNacimiento;
+            txt_FechaNacimiento.Text = _aviso.FNacimiento.ToString("dd/MM/yyyy");
             TextView txt_FechaMuerte = FindViewById<TextView>(Resource.Id.txt_FAFechaMuerte);
-            txt_FechaMuerte.Text = _aviso.FMuerte;
+            txt_FechaMuerte.Text = _aviso.FMuerte.ToString("dd/MM/yyyy");
             TextView txt_Crotal = FindViewById<TextView>(Resource.Id.txt_FACrotal);
             txt_Crotal.Text = _aviso.Crotal;
             EditText txt_NumAnimales = FindViewById<EditText>(Resource.Id.txt_FANumAnimales);
@@ -82,6 +84,7 @@ namespace Render
             txt_NumAnimales.Text = _aviso.Animales;
             txt_Peso = FindViewById<EditText>(Resource.Id.txt_FAPesoBruto);
             txt_Peso.Text = _aviso.Bruto;
+            txt_Peso.FocusChange += Txt_Peso_FocusChange;
             txt_Tara = FindViewById<EditText>(Resource.Id.txt_FAPesoTara);
             txt_Tara.Text = _aviso.Tara;
             TextView txt_PesoNeto = FindViewById<TextView>(Resource.Id.txt_FATfn1);
@@ -89,6 +92,15 @@ namespace Render
 
             Button btn_Pesar = FindViewById<Button>(Resource.Id.btn_FAPesar);
             btn_Pesar.Click += Btn_Pesar_Click;
+        }
+
+        private void Txt_Peso_FocusChange(object sender, View.FocusChangeEventArgs e)
+        {
+            if(_aviso.Bruto != txt_Peso.Text)
+            {
+                _aviso.Bruto = txt_Peso.Text;
+                Editar(_aviso);
+            }
         }
 
         private void Btn_Pesar_Click(object sender, EventArgs e)
@@ -106,15 +118,16 @@ namespace Render
         {
             switch (item.ItemId)
             {
-                case Resource.Id.action_imprimir:
-                    AlertDialog.Builder alert = new AlertDialog.Builder(this);
+                case Resource.Id.action_cerareimprimir:
+                    alert = new AlertDialog.Builder(this);
                     alert.SetTitle("Imprimir Hoja de Trabajo");
-                    alert.SetMessage("¿Está seguro que desea imprimir la hoja de trabajo?");
+                    alert.SetMessage("¿Está seguro que desea cerrar e imprimir el ticket?");
                     alert.SetPositiveButton("Sí", (senderAlert, args) =>
                     {
-
+                        Cerrar(_aviso);
+                        Imprimir(_aviso);
                         Toast.MakeText(this, "Confirmado", ToastLength.Short).Show();
-
+                        this.Finish();
                     });
 
                     alert.SetNegativeButton("No", (senderAlert, args) =>
@@ -124,17 +137,16 @@ namespace Render
 
                     });
 
-                    Dialog dialog = alert.Create();
+                    dialog = alert.Create();
 
                     dialog.Show();
                     return true;
+
                 case Resource.Id.action_cerrar:
-                    //do something
                     Cerrar(_aviso);
                     this.Finish();
                     return true;
                 case Resource.Id.action_anular:
-                    //do something
                     AnularAviso(_aviso);
                     this.Finish();
                     return true;
@@ -170,19 +182,60 @@ namespace Render
                     txt_Peso.FocusableInTouchMode = true;
                     txt_Tara.Focusable = true;
                     txt_Tara.FocusableInTouchMode = true;
-                    //_aviso.Pesada_Manual = true;
-                    Sincronizacion s = new Sincronizacion();
-                    //s.ActualizarAviso(_aviso);
+                    //Editar(_aviso);
+                    return true;
+
+                case Resource.Id.action_rechazar:
+                    alert = new AlertDialog.Builder(this);
+                    alert.SetTitle("Imprimir Hoja de Trabajo");
+                    alert.SetMessage("¿Está seguro que desea rechazar el aviso?");
+                    alert.SetPositiveButton("Sí", (senderAlert, args) =>
+                    {
+                        RechazarAviso(_aviso);
+                        Toast.MakeText(this, "Confirmado", ToastLength.Short).Show();
+                        this.Finish();
+
+                    });
+                    alert.SetNegativeButton("No", (senderAlert, args) =>
+                    {
+
+                        Toast.MakeText(this, "Cancelado!", ToastLength.Short).Show();
+
+                    });
+
+                    dialog = alert.Create();
+
+                    dialog.Show();
                     return true;
                     
             }
             return base.OnOptionsItemSelected(item);
         }
-       
+
+        private void RechazarAviso(AvisoRender aviso)
+        {
+            ColaSincronizacion c = new ColaSincronizacion();
+            _aviso.Sentido = Sentido.NAVISION.ToString();
+            _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
+            _aviso.Tipo_Accion = Tipo_Accion.Eliminar.ToString();
+            _aviso.Notificar_Aviso = true;
+            c.InsertarEnCola(_aviso);
+
+        }
+        private void Editar(AvisoRender _aviso)
+        {
+            Database db = new Database();
+            _aviso.Pesada_Manual = true;
+            db.ActualizarAviso(_aviso);
+
+        }
         private void Cerrar(AvisoRender _aviso)
         {
-            _aviso.Estado_siniestro = Estado_siniestro.Recogido.ToString();
             ColaSincronizacion c = new ColaSincronizacion();
+            _aviso.Estado_siniestro = Estado_siniestro.Recogido.ToString();
+            _aviso.Sentido = Sentido.NAVISION.ToString();
+            _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
+            _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
             c.InsertarEnCola(_aviso);
             
         }

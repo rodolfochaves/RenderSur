@@ -105,7 +105,6 @@
     <Compile Include="ConexionFtdi.cs" />
     <Compile Include="FichaAvisoRecogido.cs" />
     <Compile Include="FichaAviso.cs" />
-    <Compile Include="Resources\DataHelper\SmtpRender.cs" />
     <Compile Include="Resources\Helper\Settings.cs" />
     <Compile Include="ListaAvisos.cs" />
     <Compile Include="ListaAvisosRecogidos.cs" />

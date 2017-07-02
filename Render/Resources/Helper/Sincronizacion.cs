@@ -15,7 +15,6 @@ namespace Render.Resources.Helper
         private List<ConductorRender> _conductorRender { get; set; }
         private List<EspecieRender> _especiesRender { get; set; }
         private List<HojaRutaRender> _hojasRutaRender { get; set; }
-        private SmtpRender _smtpRender { get; set; }
         private Database db;
         //Función para la sincronizacion de datos con central
         public bool Sincronizar()
@@ -47,7 +46,6 @@ namespace Render.Resources.Helper
                     ActualizarAvisoCola(a);
                 }
 
-                db.InsertarSmtp(ConfiguracionSmtp());
 
                 //SINCRONIZACION PARA CENTRAL
                 ColaSincronizacion _cola = new ColaSincronizacion();
@@ -190,16 +188,6 @@ namespace Render.Resources.Helper
             AvisosRender = new List<AvisoRender>();
             AvisosRender = JsonConvert.DeserializeObject<AvisoRenderJson>(content.ToString()).value;
             return AvisosRender.LastOrDefault().Movimiento;
-        }
-        public SmtpRender ConfiguracionSmtp()
-        {
-            var client = new RestClient(Constantes.Servidor);
-            client.Authenticator = new NtlmAuthenticator(Constantes.UsuarioServidor, Constantes.PassUsuarioServidor);
-            string _ruta = String.Format("SmtpAPPWS?$format=json");
-            IRestRequest r = new RestRequest(_ruta, Method.GET);
-            IRestResponse response = client.Execute(r);
-            var content = response.Content;
-            return _smtpRender = JsonConvert.DeserializeObject<SmtpRenderJson>(content.ToString()).value;
         }
     }
 }

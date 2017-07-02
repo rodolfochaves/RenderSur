@@ -1,4 +1,5 @@
 using SQLite;
+using System;
 using System.Collections.Generic;
 
 namespace Render.Resources.DataHelper
@@ -9,9 +10,9 @@ namespace Render.Resources.DataHelper
         public int Movimiento { get; set; }
         public string Document_Type { get; set; }
         public string No { get; set; }
-        public string Fecha_Aviso { get; set; }
-        public string Fecha_Recogida { get; set; }
-        public string Fecha_Fin { get; set; }
+        public DateTime Fecha_Aviso { get; set; }
+        public DateTime Fecha_Recogida { get; set; }
+        public DateTime Fecha_Fin { get; set; }
         public string Colectivo { get; set; }
         public string Poliza { get; set; }
         public string Explotacion { get; set; }
@@ -23,8 +24,8 @@ namespace Render.Resources.DataHelper
         public string Tfno2 { get; set; }
         public string Estado_siniestro { get; set; }
         public string Espiece { get; set; }
-        public string FNacimiento { get; set; }
-        public string FMuerte { get; set; }
+        public DateTime FNacimiento { get; set; }
+        public DateTime FMuerte { get; set; }
         public string Crotal { get; set; }
         public string Animales { get; set; }
         public string Bruto { get; set; }
@@ -41,6 +42,7 @@ namespace Render.Resources.DataHelper
         public bool Anular_Aviso { get; set; }
         public string Sini_Estado_siniestro { get; set; }
         public bool Pesada_Manual { get; set; }
+        public bool Notificar_Aviso { get; set; }
         public string ETag { get; set; }
 
     }
