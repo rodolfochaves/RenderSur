@@ -11,7 +11,7 @@ namespace Render
 {
 	public class AvisoAdapter:BaseAdapter<AvisoRender>
 	{
-        //COMENTARIO NUEVOuu
+        //COMENTARIO ACTRCG
 		private Context mContext;
 		private int mRowLayaout;
 		private List<AvisoRender> pAvisos;
