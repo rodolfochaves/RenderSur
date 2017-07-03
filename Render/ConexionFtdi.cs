@@ -18,6 +18,7 @@ namespace Render
 
     public class ConexionFtdi : Activity
     {
+        //COMENTARIO
         private UsbManager m_usbManager;
         public Bascula _bascula;
         private string m_strBluetoothTarget;
