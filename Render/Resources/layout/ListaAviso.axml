@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="5dp"
     android:paddingTop="2dp">
-    <TextView
+  <TextView
         android:id="@+id/txtAviso"
         android:text=""
         android:layout_height="wrap_content"
@@ -13,60 +13,60 @@
         android:layout_weight="1"
         android:gravity="left"
         android:paddingLeft="10dp" />
-    <TextView
-        android:id="@+id/txtEspecie"
-        android:text=""
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
-    <TextView
-        android:id="@+id/txtAG"
-        android:text=""
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
-    <TextView
-        android:id="@+id/txtFAviso"
-        android:text=""
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
-    <TextView
-        android:id="@+id/txtPoblación"
-        android:text=""
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
-    <TextView
-        android:text=""
-        android:id="@+id/txtNombre"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
-    <TextView
-        android:text=""
-        android:id="@+id/txtExplotación"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
-    <TextView
-        android:text=""
-        android:id="@+id/txtTfno1"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
-    <TextView
-        android:text=""
-        android:id="@+id/txtTfno2"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:gravity="left" />
+  <TextView
+      android:id="@+id/txtEspecie"
+      android:text=""
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
+  <TextView
+      android:id="@+id/txtAG"
+      android:text=""
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
+  <TextView
+      android:id="@+id/txtFAviso"
+      android:text=""
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
+  <TextView
+      android:id="@+id/txtPoblación"
+      android:text=""
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
+  <TextView
+      android:text=""
+      android:id="@+id/txtNombre"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
+  <TextView
+      android:text=""
+      android:id="@+id/txtExplotación"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
+  <TextView
+      android:text=""
+      android:id="@+id/txtTfno1"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
+  <TextView
+      android:text=""
+      android:id="@+id/txtTfno2"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent"
+      android:layout_weight="1"
+      android:gravity="left" />
 </LinearLayout>

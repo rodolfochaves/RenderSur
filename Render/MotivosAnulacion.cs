@@ -28,9 +28,11 @@ namespace Render.Resources
             {
                 ListaMotivos.Add(item.Descripcion);
             }
-            ArrayAdapter ad = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, ListaMotivos);
 
-            ad.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            MotivoAnulacionAdapter ad = new MotivoAnulacionAdapter(this, Resource.Layout.ListaMotivos, items);
+            //ArrayAdapter ad = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, items);
+
+            //ad.SetDropDownViewResource(Android.Resource.Layout.SimpleListItem1);
 
             Spinner spinner = FindViewById<Spinner>(Resource.Id.Spinner);
 
@@ -39,6 +41,8 @@ namespace Render.Resources
             spinner.ItemSelected += (sender, e) => {
 
                 var s = sender as Spinner;
+                
+                Context c = e.View.Context;
                 Settings._NoAccesible = s.GetItemAtPosition(e.Position).ToString();
 
             };

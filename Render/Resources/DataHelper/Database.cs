@@ -426,5 +426,21 @@ namespace Render.Resources.DataHelper
                 Log.Info("SQLiteEx", ex.Message);
             }
         }
+        public void BorrarTablasFinalizarHoja()
+        {
+            try
+            {
+                using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
+                {
+                    conexion.DeleteAll<AvisoRender>();
+                    conexion.DeleteAll<HojaRutaRender>();
+                    conexion.DeleteAll<ColaAvisoRender>();
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                Log.Info("SQLiteEx", ex.Message);
+            }
+        }
     }
 }

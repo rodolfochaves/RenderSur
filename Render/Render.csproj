@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MotivoAnulacionAdapter.cs" />
     <Compile Include="ColaAvisoAdapter.cs" />
     <Compile Include="ConexionFtdi.cs" />
     <Compile Include="FichaAvisoRecogido.cs" />
@@ -168,6 +169,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\FichaAvisoRecogido.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ListaMotivos.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

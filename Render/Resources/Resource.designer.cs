@@ -109,77 +109,77 @@ namespace Render
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080052
-			public const int BotonAvisosPendientes = 2131230802;
-			
-			// aapt resource value: 0x7f080053
-			public const int BotonAvisosRecogidos = 2131230803;
-			
 			// aapt resource value: 0x7f080054
-			public const int BotonAvisosSinSincronizar = 2131230804;
+			public const int BotonAvisosPendientes = 2131230804;
+			
+			// aapt resource value: 0x7f080055
+			public const int BotonAvisosRecogidos = 2131230805;
 			
 			// aapt resource value: 0x7f080056
-			public const int BotonFinalizarHojadeTrabajo = 2131230806;
-			
-			// aapt resource value: 0x7f080057
-			public const int BotonImprimirHojadeTrabajo = 2131230807;
+			public const int BotonAvisosSinSincronizar = 2131230806;
 			
 			// aapt resource value: 0x7f080058
-			public const int BotonSincronizar = 2131230808;
-			
-			// aapt resource value: 0x7f080050
-			public const int Recodar_DatosAcceso = 2131230800;
-			
-			// aapt resource value: 0x7f080063
-			public const int Spinner = 2131230819;
-			
-			// aapt resource value: 0x7f08005a
-			public const int action_acumular = 2131230810;
-			
-			// aapt resource value: 0x7f08005e
-			public const int action_anular = 2131230814;
-			
-			// aapt resource value: 0x7f08005f
-			public const int action_cancelar = 2131230815;
-			
-			// aapt resource value: 0x7f080061
-			public const int action_cancelar_recogido = 2131230817;
-			
-			// aapt resource value: 0x7f08005b
-			public const int action_cerareimprimir = 2131230811;
-			
-			// aapt resource value: 0x7f08005c
-			public const int action_cerrar = 2131230812;
-			
-			// aapt resource value: 0x7f080060
-			public const int action_cerrarSesion = 2131230816;
-			
-			// aapt resource value: 0x7f08005d
-			public const int action_editar = 2131230813;
-			
-			// aapt resource value: 0x7f080062
-			public const int action_imprimir_recogido = 2131230818;
+			public const int BotonFinalizarHojadeTrabajo = 2131230808;
 			
 			// aapt resource value: 0x7f080059
-			public const int action_rechazar = 2131230809;
+			public const int BotonImprimirHojadeTrabajo = 2131230809;
+			
+			// aapt resource value: 0x7f08005a
+			public const int BotonSincronizar = 2131230810;
+			
+			// aapt resource value: 0x7f080052
+			public const int Recodar_DatosAcceso = 2131230802;
+			
+			// aapt resource value: 0x7f080065
+			public const int Spinner = 2131230821;
+			
+			// aapt resource value: 0x7f08005c
+			public const int action_acumular = 2131230812;
+			
+			// aapt resource value: 0x7f080060
+			public const int action_anular = 2131230816;
+			
+			// aapt resource value: 0x7f080061
+			public const int action_cancelar = 2131230817;
+			
+			// aapt resource value: 0x7f080063
+			public const int action_cancelar_recogido = 2131230819;
+			
+			// aapt resource value: 0x7f08005d
+			public const int action_cerareimprimir = 2131230813;
+			
+			// aapt resource value: 0x7f08005e
+			public const int action_cerrar = 2131230814;
+			
+			// aapt resource value: 0x7f080062
+			public const int action_cerrarSesion = 2131230818;
+			
+			// aapt resource value: 0x7f08005f
+			public const int action_editar = 2131230815;
+			
+			// aapt resource value: 0x7f080064
+			public const int action_imprimir_recogido = 2131230820;
+			
+			// aapt resource value: 0x7f08005b
+			public const int action_rechazar = 2131230811;
 			
 			// aapt resource value: 0x7f080018
 			public const int btn_FAPesar = 2131230744;
 			
-			// aapt resource value: 0x7f08004f
-			public const int button1 = 2131230799;
-			
-			// aapt resource value: 0x7f08004c
-			public const int editText1 = 2131230796;
+			// aapt resource value: 0x7f080051
+			public const int button1 = 2131230801;
 			
 			// aapt resource value: 0x7f08004e
-			public const int editText2 = 2131230798;
+			public const int editText1 = 2131230798;
+			
+			// aapt resource value: 0x7f080050
+			public const int editText2 = 2131230800;
 			
 			// aapt resource value: 0x7f080039
 			public const int etSearch = 2131230777;
 			
-			// aapt resource value: 0x7f08004b
-			public const int imageView1 = 2131230795;
+			// aapt resource value: 0x7f08004d
+			public const int imageView1 = 2131230797;
 			
 			// aapt resource value: 0x7f080038
 			public const int listView = 2131230776;
@@ -187,14 +187,14 @@ namespace Render
 			// aapt resource value: 0x7f08002e
 			public const int llContainer = 2131230766;
 			
-			// aapt resource value: 0x7f080051
-			public const int myButton = 2131230801;
+			// aapt resource value: 0x7f080053
+			public const int myButton = 2131230803;
 			
 			// aapt resource value: 0x7f080001
 			public const int textView1 = 2131230721;
 			
-			// aapt resource value: 0x7f08004d
-			public const int textView2 = 2131230797;
+			// aapt resource value: 0x7f08004f
+			public const int textView2 = 2131230799;
 			
 			// aapt resource value: 0x7f080000
 			public const int toggleButton1 = 2131230720;
@@ -214,8 +214,14 @@ namespace Render
 			// aapt resource value: 0x7f080043
 			public const int txtAvisoR = 2131230787;
 			
-			// aapt resource value: 0x7f080055
-			public const int txtAvisosSinSincronizar = 2131230805;
+			// aapt resource value: 0x7f080057
+			public const int txtAvisosSinSincronizar = 2131230807;
+			
+			// aapt resource value: 0x7f08004b
+			public const int txtCodMotivo = 2131230795;
+			
+			// aapt resource value: 0x7f08004c
+			public const int txtDescripcionMotivo = 2131230796;
 			
 			// aapt resource value: 0x7f08003b
 			public const int txtEspecie = 2131230779;
@@ -441,25 +447,28 @@ namespace Render
 			public const int ListaAvisosRecogidos = 2130968581;
 			
 			// aapt resource value: 0x7f040006
-			public const int Login = 2130968582;
+			public const int ListaMotivos = 2130968582;
 			
 			// aapt resource value: 0x7f040007
-			public const int Main = 2130968583;
+			public const int Login = 2130968583;
 			
 			// aapt resource value: 0x7f040008
-			public const int Menu = 2130968584;
+			public const int Main = 2130968584;
 			
 			// aapt resource value: 0x7f040009
-			public const int menu_opciones = 2130968585;
+			public const int Menu = 2130968585;
 			
 			// aapt resource value: 0x7f04000a
-			public const int menu_salir = 2130968586;
+			public const int menu_opciones = 2130968586;
 			
 			// aapt resource value: 0x7f04000b
-			public const int menus_recogidos = 2130968587;
+			public const int menu_salir = 2130968587;
 			
 			// aapt resource value: 0x7f04000c
-			public const int MotivosAnulacion = 2130968588;
+			public const int menus_recogidos = 2130968588;
+			
+			// aapt resource value: 0x7f04000d
+			public const int MotivosAnulacion = 2130968589;
 			
 			static Layout()
 			{
