@@ -25,6 +25,10 @@ namespace Render
         private Database _db = new Database();
         private EditText txt_Peso;
         private EditText txt_Tara;
+        //INI JRD Añadidos campos que faltaban 03/07/17 
+        private EditText txt_Observaciones;
+        private EditText txt_Animales;
+        //FIN JRD Añadidos campos que faltaban 03/07/17 
         private AlertDialog.Builder alert;
         private Dialog dialog;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -89,6 +93,11 @@ namespace Render
             txt_Tara.Text = _aviso.Tara;
             TextView txt_PesoNeto = FindViewById<TextView>(Resource.Id.txt_FATfn1);
             txt_PesoNeto.Text = _aviso.Neto;
+
+            //INI JRD Añadidos campos que faltaban 03/07/17 
+            txt_Observaciones = FindViewById<EditText>(Resource.Id.txt_FAObservaciones);
+            txt_Observaciones.Text = _aviso.Observaciones;
+            //FIN JRD Añadidos campos que faltaban 03/07/17 
 
             Button btn_Pesar = FindViewById<Button>(Resource.Id.btn_FAPesar);
             btn_Pesar.Click += Btn_Pesar_Click;
@@ -237,6 +246,15 @@ namespace Render
             _aviso.Estado_siniestro = Estado_siniestro.Recogido.ToString();
             _aviso.Sentido = Sentido.NAVISION.ToString();
             _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
+            _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
+            //INI JRD Añadidos campos que faltaban 03/07/17 
+            txt_Observaciones = FindViewById<EditText>(Resource.Id.txt_FAObservaciones);
+            _aviso.Observaciones = txt_Observaciones.Text;
+            txt_Animales = FindViewById<EditText>(Resource.Id.txt_FANumAnimales);
+            _aviso.Animales = txt_Animales.Text;
+            //FIN JRD Añadidos campos que faltaban 03/07/17 
+            _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
+            _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
             _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
             c.InsertarEnCola(_aviso);
             
