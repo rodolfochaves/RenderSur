@@ -248,9 +248,9 @@ namespace Render
             _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
             _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
             //INI JRD Añadidos campos que faltaban 03/07/17 
-            txt_Observaciones = FindViewById<EditText>(Resource.Id.txt_FAObservaciones);
+            //txt_Observaciones = FindViewById<EditText>(Resource.Id.txt_FAObservaciones);
             _aviso.Observaciones = txt_Observaciones.Text;
-            txt_Animales = FindViewById<EditText>(Resource.Id.txt_FANumAnimales);
+            //txt_Animales = FindViewById<EditText>(Resource.Id.txt_FANumAnimales);
             _aviso.Animales = txt_Animales.Text;
             //FIN JRD Añadidos campos que faltaban 03/07/17 
             _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
