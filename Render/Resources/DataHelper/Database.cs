@@ -93,8 +93,9 @@ namespace Render.Resources.DataHelper
             {
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
-                    return conexion.Table<MotivosAnulacionRender>().ToList();
-
+                    //return conexion.Table<MotivosAnulacionRender>().ToList();
+                    //JRD Filtro en las anulaciones Mostra movil 03/07/17
+                    return conexion.Table<MotivosAnulacionRender>().Where(x => x.MostrarMovil == true).ToList();
                 }
             }
             catch (SQLiteException ex)

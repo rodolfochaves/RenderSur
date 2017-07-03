@@ -214,7 +214,9 @@ namespace Render
 
         private void RechazarAviso(AvisoRender aviso)
         {
+            
             ColaSincronizacion c = new ColaSincronizacion();
+            _aviso.Estado_siniestro = Estado_siniestro.Recogido.ToString();
             _aviso.Sentido = Sentido.NAVISION.ToString();
             _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
             _aviso.Tipo_Accion = Tipo_Accion.Eliminar.ToString();

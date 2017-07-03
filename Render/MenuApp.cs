@@ -61,7 +61,7 @@ namespace Render
                 case Resource.Id.action_cerrarSesion:
                     Settings._TieneAcceso = false;
                     db = new Database();
-                    //db.BorrarTablas();
+                    db.BorrarTablas();
                     StartActivity(typeof(MainActivity));
                     return true;
 
