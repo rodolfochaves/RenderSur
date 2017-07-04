@@ -26,6 +26,7 @@ namespace Render.Resources.DataHelper
                     conexion.CreateTable<PesadaRender>();
                     conexion.CreateTable<HojaRutaRender>();
                     conexion.CreateTable<ColaAvisoRender>();
+                    conexion.Close();
                     return true;
                 }
             }
@@ -145,6 +146,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.InsertOrReplace(_conductor);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -161,6 +163,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.InsertOrReplace(_motivo);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -209,6 +212,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.Insert(_aviso);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -225,6 +229,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.Insert(_hojaRuta);
+                    conexion.Close();
                     return true;
                 }
             }

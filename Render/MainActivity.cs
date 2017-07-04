@@ -35,7 +35,7 @@ namespace Render
             {
                 SetContentView(Resource.Layout.Login);
                 //Lanzo sincronización
-                StartService(new Android.Content.Intent(this, typeof(Sincronizador.Sincronizador)));
+                //StartService(new Android.Content.Intent(this, typeof(Sincronizador.Sincronizador)));
 
                 btnLogin = FindViewById<Button>(Resource.Id.button1);
                 txtNombreUsuario = FindViewById<EditText>(Resource.Id.editText1);

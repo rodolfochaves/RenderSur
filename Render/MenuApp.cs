@@ -106,8 +106,10 @@ namespace Render
             alert.SetTitle("Finalizar Hoja de Trabajo");
             alert.SetMessage("¿Está seguro que desea finalizar la hoja de trabajo?");
             alert.SetPositiveButton("Sí", (senderAlert, args) =>
+            
             {
-                if(db.PendientesDeSincronizar() > 0)
+                db = new Database();
+                if (db.PendientesDeSincronizar() > 0)
                 {
                     Toast.MakeText(this, "Tiene avisos pendientes de sincronizar, no puede finalizar la hoja hasta que estén completamente sincronizados", ToastLength.Long).Show();
                 }
