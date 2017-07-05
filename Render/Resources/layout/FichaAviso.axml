@@ -189,19 +189,18 @@
         android:textSize="14dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
-        android:inputType="date"/>
-  <EditText
-      android:id="@+id/txt_FAFechaMuerte"
+        android:inputType="date" />
+    <EditText
+        android:id="@+id/txt_FAFechaMuerte"
         android:textSize="14dip"
         android:paddingRight="10dip"
         android:paddingBottom="5dip"
-      android:inputType="date"/>
-  <EditText
-      android:id="@+id/txt_FACrotal"
+        android:inputType="date" />
+    <EditText
+        android:id="@+id/txt_FACrotal"
         android:textSize="14dip"
         android:paddingRight="10dip"
-        android:paddingBottom="5dip"
-      />
+        android:paddingBottom="5dip" />
     <EditText
         android:id="@+id/txt_FANumAnimales"
         android:textSize="14dip"

@@ -83,7 +83,7 @@ namespace Render
             new Thread(new ThreadStart(delegate
             {
                 _ListaAvisos = new Database().ListaAvisosSQL();
-                    mAdapter = new AvisoAdapter(this, Resource.Layout.ListaAviso, _ListaAvisos);
+                mAdapter = new AvisoAdapter(this, Resource.Layout.ListaAviso, _ListaAvisos);
                 RunOnUiThread(() =>
                 {
                     mListView.Adapter = mAdapter;

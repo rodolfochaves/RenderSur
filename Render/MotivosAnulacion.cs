@@ -10,42 +10,54 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Render.Resources.DataHelper;
+using Newtonsoft.Json;
+using Render.Resources.Helper;
+
 namespace Render.Resources
 {
     [Activity(Label = "MotivosAnulacion")]
     public class MotivosAnulacion : Activity
     {
         Database _db = new Database();
-
+        private AvisoRender _aviso;
         List<MotivosAnulacionRender> items = new Database().ListaMotivosSQL();
-        
+        private int Contador = 1;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MotivosAnulacion);
-            List<string> ListaMotivos= new List<string>();
-            foreach (var item in items)
-            {
-                ListaMotivos.Add(item.Descripcion);
-            }
-
+            string Aviso = Intent.GetStringExtra("Avisos");
+            _aviso = JsonConvert.DeserializeObject<AvisoRender>(Aviso);
             MotivoAnulacionAdapter ad = new MotivoAnulacionAdapter(this, Resource.Layout.ListaMotivos, items);
-            //ArrayAdapter ad = new ArrayAdapter(this, Android.Resource.Layout.SimpleSpinnerItem, items);
-
-            //ad.SetDropDownViewResource(Android.Resource.Layout.SimpleListItem1);
-
             Spinner spinner = FindViewById<Spinner>(Resource.Id.Spinner);
-
             spinner.Adapter = ad;
+            spinner.ItemSelected += Spinner_ItemSelected;
+            
+        }
 
-            spinner.ItemSelected += (sender, e) => {
-
+        private void Spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            if (Contador != 1)
+            {
                 var s = sender as Spinner;
-                
+
                 Context c = e.View.Context;
                 Settings._NoAccesible = s.GetItemAtPosition(e.Position).ToString();
-
-            };
+                ColaSincronizacion _cola = new ColaSincronizacion();
+                _aviso.Estado_siniestro = "Recogido";
+                _aviso.Anular_Aviso = true;
+                _aviso.Observaciones = "ANULACION CON MOTIVO DE ANULACIÓN";
+                _aviso.Estado_siniestro = Estado_siniestro.Recogido.ToString();
+                _aviso.Sentido = Sentido.NAVISION.ToString();
+                _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
+                _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
+                _cola.InsertarEnCola(_aviso);
+                this.Finish();
+            }
+            else
+            {
+                Contador += 1;
+            }
         }
     }
 }

@@ -26,6 +26,7 @@ namespace Render
         private EditText txt_PesoBruto;
         private TextView txt_PesoNeto;
         private EditText txt_Tara;
+        private TextView txt_PesoTotal;
         //INI JRD Añadidos campos que faltaban 03/07/17 
         private EditText txt_Observaciones;
         private EditText txt_NumAnimales;
@@ -41,6 +42,7 @@ namespace Render
             SetContentView(Resource.Layout.FichaAviso);
             CultureInfo culture = new CultureInfo("es-ES");
             string Aviso = Intent.GetStringExtra("Avisos");
+            
             _aviso = JsonConvert.DeserializeObject<AvisoRender>(Aviso);
             TextView txt_NumeroAviso = FindViewById<TextView>(Resource.Id.txt_FANumeroAviso);
             txt_NumeroAviso.Text = _aviso.No;
@@ -103,14 +105,15 @@ namespace Render
             }
             txt_NumAnimales.Text = _aviso.Animales;
             txt_PesoBruto = FindViewById<EditText>(Resource.Id.txt_FAPesoBruto);
-            txt_PesoBruto.Text = _aviso.Bruto;
+            txt_PesoBruto.Text = "0";
             txt_PesoBruto.FocusChange += Txt_Peso_FocusChange;
             txt_Tara = FindViewById<EditText>(Resource.Id.txt_FAPesoTara);
-            txt_Tara.Text = _aviso.Tara;
+            txt_Tara.Text = "0";
             txt_Tara.FocusChange += Txt_Tara_FocusChange;
             txt_PesoNeto = FindViewById<TextView>(Resource.Id.txt_FAPesoNeto);
-            txt_PesoNeto.Text = _aviso.Neto;
-
+            txt_PesoNeto.Text = "0";
+            txt_PesoTotal = FindViewById<TextView>(Resource.Id.txt_FAPesoTotal);
+            txt_PesoTotal.Text = _db.SumaPesadas(_aviso.No).ToString();
             //INI JRD Añadidos campos que faltaban 03/07/17 
             txt_Observaciones = FindViewById<EditText>(Resource.Id.txt_FAObservaciones);
             txt_Observaciones.Text = _aviso.Observaciones;
@@ -134,6 +137,7 @@ namespace Render
             if (_aviso.Bruto != txt_PesoBruto.Text)
             {
                 _aviso.Bruto = txt_PesoBruto.Text;
+                txt_PesoNeto.Text = (Convert.ToDecimal(txt_PesoBruto.Text) - Convert.ToDecimal(txt_Tara.Text)).ToString();
                 Editar(_aviso);
             }
         }
@@ -191,6 +195,8 @@ namespace Render
                     txt_PesoBruto.FocusableInTouchMode = true;
                     txt_Tara.Focusable = true;
                     txt_Tara.FocusableInTouchMode = true;
+                    txt_Crotal.Focusable = true;
+                    txt_Crotal.FocusableInTouchMode = true;
                     //Editar(_aviso);
                     return true;
 
@@ -248,26 +254,35 @@ namespace Render
             }
             else
             {
-                if (txt_PesoNeto.Text == "0")
+                if (Convert.ToDecimal(txt_PesoNeto.Text) == 0)
                 {
                     Toast.MakeText(this, "El Peso Neto no puede ser 0", ToastLength.Long).Show();
                 }
                 else
                 {
-                    ColaSincronizacion c = new ColaSincronizacion();
-                    _aviso.Estado_siniestro = Estado_siniestro.Recogido.ToString();
-                    _aviso.Sentido = Sentido.NAVISION.ToString();
-                    _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
-                    _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
-                    //INI JRD Añadidos campos que faltaban 03/07/17 
-                    _aviso.Observaciones = txt_Observaciones.Text;
-                    _aviso.Animales = txt_NumAnimales.Text;
-                    //FIN JRD Añadidos campos que faltaban 03/07/17 
-                    _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
-                    _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
-                    _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
-                    c.InsertarEnCola(_aviso);
-                    this.Finish();
+                    if (Convert.ToDecimal(txt_PesoBruto.Text) >= Convert.ToDecimal(txt_Tara.Text))
+                    {
+                        ColaSincronizacion c = new ColaSincronizacion();
+                        _aviso.Estado_siniestro = Estado_siniestro.Recogido.ToString();
+                        _aviso.Sentido = Sentido.NAVISION.ToString();
+                        _aviso.Estado_procesamiento = Estado_procesamiento.Noprocesada;
+                        _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
+                        //INI JRD Añadidos campos que faltaban 03/07/17 
+                        _aviso.Observaciones = txt_Observaciones.Text;
+                        _aviso.Animales = txt_NumAnimales.Text;
+                        _aviso.Bruto = txt_PesoBruto.Text;
+                        _aviso.Tara = txt_Tara.Text;
+                        //FIN JRD Añadidos campos que faltaban 03/07/17 
+                        _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
+                        _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
+                        _aviso.Tipo_Accion = Tipo_Accion.Modificar.ToString();
+                        c.InsertarEnCola(_aviso);
+                        this.Finish();
+                    }
+                    else
+                    {
+                        Toast.MakeText(this, "El Peso Bruto debe de ser mayor o igual a la tara", ToastLength.Long).Show();
+                    }
                 }
 
             }
@@ -279,7 +294,7 @@ namespace Render
         }
         private void AnularAviso(AvisoRender _aviso)
         {
-            if (txt_PesoNeto.Text != "0")
+            if (Convert.ToDecimal(txt_PesoNeto.Text) != 0)
             {
                 alert = new AlertDialog.Builder(this);
                 alert.SetTitle("Aviso anulación aviso");
@@ -287,6 +302,13 @@ namespace Render
                 alert.SetPositiveButton("Sí", (senderAlert, args) =>
                 {
                     txt_PesoNeto.Text = "0";
+                    var aviso = _aviso;
+                    Intent i = new Intent(this, typeof(MotivosAnulacion));
+                    string jsonaviso = JsonConvert.SerializeObject(aviso);
+                    i.PutExtra("Avisos", jsonaviso);
+                    StartActivity(i);
+                  
+
                     Toast.MakeText(this, "Confirmado", ToastLength.Short).Show();
 
                 });
@@ -304,17 +326,17 @@ namespace Render
             }
             else
             {
-                StartActivity(typeof(MotivosAnulacion));
-                if (Settings._NoAccesible != string.Empty)
-                {
-                    _aviso.Estado_siniestro = "Recogido";
-                }
+                var aviso = _aviso;
+                    Intent i = new Intent(this, typeof(MotivosAnulacion));
+                    string jsonaviso = JsonConvert.SerializeObject(aviso);
+                    i.PutExtra("Avisos", jsonaviso);
+                    StartActivity(i);
             }
 
         }
         private void AculumarPeso()
         {
-            if (txt_PesoNeto.Text == "0")
+            if (Convert.ToDecimal(txt_PesoNeto.Text) == 0)
             {
                 Toast.MakeText(this, "El Peso Neto no puede ser 0", ToastLength.Long).Show();
             }
@@ -322,27 +344,26 @@ namespace Render
             {
                 PesadaRender pesada = new PesadaRender();
                 ContadorPesada = _db.UltimaPesada(_aviso.No);
-                decimal SumasPesadas = 0;
                 if (ContadorPesada != 0)
                 {
                     pesada.Aviso = _aviso.No;
                     pesada.NumPesada = ContadorPesada + 1;
-                    pesada.Bruto = 955;
-                    pesada.Tara = 0;
-                    pesada.Neto = 955;
+                    pesada.Bruto = Convert.ToDecimal(txt_PesoBruto.Text);
+                    pesada.Tara = Convert.ToDecimal(txt_Tara.Text);
+                    pesada.Neto = pesada.Bruto-pesada.Tara;
                     _db.InsertarPesada(pesada);
                     ContadorPesada++;
-                    SumasPesadas = _db.SumaPesadas(_aviso.No);
-                    txt_PesoBruto.Text = SumasPesadas.ToString();
-                    _aviso.Bruto = SumasPesadas.ToString();
+                    
+                    txt_PesoTotal.Text = _db.SumaPesadas(_aviso.No).ToString();
+                    _aviso.Bruto = "0";
                 }
                 else
                 {
                     pesada.Aviso = _aviso.No;
                     pesada.NumPesada = ContadorPesada + 1;
-                    pesada.Bruto = 955;
-                    pesada.Tara = 0;
-                    pesada.Neto = 955;
+                    pesada.Bruto = Convert.ToDecimal(txt_PesoBruto.Text);
+                    pesada.Tara = Convert.ToDecimal(txt_Tara.Text); 
+                    pesada.Neto = pesada.Bruto - pesada.Tara;
                     _db.InsertarPesada(pesada);
                     ContadorPesada++;
                 }

@@ -102,8 +102,8 @@ namespace Render.Resources.Helper
         }
         public List<ConductorRender> ListaConductores()
         {
-            var client = new RestClient(Constantes.Servidor);
-            client.Authenticator = new NtlmAuthenticator(Constantes.UsuarioServidor, Constantes.PassUsuarioServidor);
+            var client = new RestClient("http://sede.rendersur.net:5048/RENDERAMAPP/OData/Company('RENDER_APPMOVIL')/");
+            client.Authenticator = new NtlmAuthenticator(@"grender\active", "Active2015");
             IRestRequest r = new RestRequest("ConductoresAPPWS?$format=json", Method.GET);
             IRestResponse response = client.Execute(r);
             var content = response.Content;

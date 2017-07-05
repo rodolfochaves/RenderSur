@@ -44,6 +44,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     List<AvisoRender> _aviso = conexion.Table<AvisoRender>().Where(x => x.Estado_siniestro == "Pendiente" || x.Estado_siniestro == "En ruta").ToList();
+                    conexion.Close();
                     return _aviso;
 
                 }
@@ -180,6 +181,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.Insert(_pesada);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -196,6 +198,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.Insert(_especie);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -246,6 +249,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(Path.Combine(Directorio, _db)))
                 {
                     conexion.Insert(_ColaAviso);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -284,6 +288,7 @@ namespace Render.Resources.DataHelper
                 {
                     ConductorRender _conductor = new ConductorRender();
                     _conductor = conexion.FindWithQuery<ConductorRender>("SELECT No,User,Pass FROM ConductorRender WHERE User=?", Usuario.ToUpper());
+                    conexion.Close();
                     return _conductor;
                 }
             }
@@ -301,6 +306,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.Update(_aviso);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -317,6 +323,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     conexion.Update(_colaaviso);
+                    conexion.Close();
                     return true;
                 }
             }
@@ -335,6 +342,7 @@ namespace Render.Resources.DataHelper
                     
                     List<PesadaRender> _pesadas;
                     _pesadas = conexion.Table<PesadaRender>().Where(x => x.Aviso == Aviso).Select(i => i).ToList();
+                    conexion.Close();
                     if (_pesadas.Count > 0)
                     {
                         List<PesadaRender> p = new List<PesadaRender>();
@@ -364,6 +372,7 @@ namespace Render.Resources.DataHelper
                     decimal _sumapesos = 0;
                     List<PesadaRender> _pesadas;
                     _pesadas = conexion.Table<PesadaRender>().Where(x => x.Aviso == Aviso).Select(i => i).ToList();
+                    conexion.Close();
                     if (_pesadas != null)
                     {
                         foreach (var item in _pesadas)
@@ -389,6 +398,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     List<ColaAvisoRender> _aviso = conexion.Table<ColaAvisoRender>().Where(x=>x.Estado_procesamiento=="No procesada").ToList();
+                    conexion.Close();
                     return _aviso.Count;
 
                 }
@@ -406,6 +416,7 @@ namespace Render.Resources.DataHelper
                 using (var conexion = new SQLiteConnection(System.IO.Path.Combine(Directorio, _db)))
                 {
                     HojaRutaRender r = conexion.FindWithQuery<HojaRutaRender>("SELECT Cód_hoja_ruta FROM HojaRutaRender WHERE Conductor=?",_conductor.ToUpper());
+                    conexion.Close();
                     return r.Cód_hoja_ruta;
 
                 }
@@ -424,6 +435,7 @@ namespace Render.Resources.DataHelper
                 {
                     conexion.DeleteAll<AvisoRender>();
                     conexion.DeleteAll<HojaRutaRender>();
+                    conexion.Close();
                 }
             }
             catch (SQLiteException ex)
@@ -440,6 +452,7 @@ namespace Render.Resources.DataHelper
                     conexion.DeleteAll<AvisoRender>();
                     conexion.DeleteAll<HojaRutaRender>();
                     conexion.DeleteAll<ColaAvisoRender>();
+                    conexion.Close();
                 }
             }
             catch (SQLiteException ex)
